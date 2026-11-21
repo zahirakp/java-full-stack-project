@@ -1,0 +1,216 @@
+
+/* Basic Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #131B2B;
+  color: #131B2B;
+  min-height: 100vh;
+}
+
+/* Center the page */
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background:
+    radial-gradient(circle at top left, #2F4A63, transparent 45%),
+    #131B2B;
+}
+
+/* Main Card */
+#root > div {
+  width: 100%;
+  max-width: 410px;
+  padding: 35px;
+  background: #CFEAE0;
+  border: 1px solid rgba(207, 234, 224, 0.5);
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  animation: appear 0.6s ease;
+}
+
+/* Soft Animation */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  color: #2F4A63;
+  font-size: 26px;
+  margin-bottom: 25px;
+  letter-spacing: 0.5px;
+}
+
+h2::after {
+  content: " ✿";
+  color: #5B91A3;
+  font-size: 18px;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 14px;
+  margin: 9px 0;
+  border: 1px solid #5B91A3;
+  border-radius: 11px;
+  background: #F7FBF9;
+  color: #131B2B;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #2F4A63;
+  box-shadow: 0 0 0 3px rgba(91, 145, 163, 0.18);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 11px;
+  background: #2F4A63;
+  color: #CFEAE0;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+button:hover {
+  background: #5B91A3;
+  color: #131B2B;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Profile Card */
+.profile-card {
+  max-width: 460px !important;
+  text-align: center;
+}
+
+/* Cute User Icon */
+  .profile-card::before {
+  content: "👤";
+}
+.profile-card::before {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #2F4A63;
+  color: #CFEAE0;
+  font-size: 48px;
+  box-shadow: 0 6px 18px rgba(47, 74, 99, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Icon Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Profile Details */
+.profile-card p {
+  text-align: left;
+  padding: 13px;
+  margin: 10px 0;
+  background: #F7FBF9;
+  border-radius: 10px;
+  font-size: 14px;
+  border-left: 3px solid #5B91A3;
+}
+
+.profile-card p:nth-of-type(1)::before {
+  content: " ";
+  color: #5B91A3;
+}
+
+.profile-card p:nth-of-type(2)::before {
+  content: "  ";
+  color: #5B91A3;
+}
+
+.profile-card p:nth-of-type(3)::before {
+  content: "✉  ";
+  color: #5B91A3;
+}
+
+/* Profile Inputs */
+.profile-card input {
+  margin-top: 10px;
+}
+
+/* Update Icon */
+.profile-card button:nth-of-type(1)::before {
+  content: "✧  ";
+}
+
+/* Logout Icon */
+.profile-card button:nth-of-type(2)::before {
+  content: "↪  ";
+}
+
+/* Delete Icon */
+.profile-card button:nth-of-type(3) {
+  background: #5B91A3;
+  color: #131B2B;
+}
+
+.profile-card button:nth-of-type(3)::before {
+  content: "  ";
+}
+
+.profile-card button:nth-of-type(3):hover {
+  background: #2F4A63;
+  color: #CFEAE0;
+}
+
+/* Mobile Design */
+@media (max-width: 480px) {
+  #root {
+    padding: 15px;
+  }
+
+  #root > div {
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+}
