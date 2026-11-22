@@ -24,18 +24,21 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // Allows our React frontend.
-        config.setAllowedOrigins(List.of("http://localhost:5173"));
+        // Allows local and deployed React frontend.
+        config.setAllowedOrigins(List.of(
+                "http://localhost:5173",
+                "https://student-management-ruddy-ten.vercel.app"
+        ));
 
         // Allows these request methods.
         config.setAllowedMethods(
                 List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")
         );
 
-        // Allows these headers.
+        // Allows request headers.
         config.setAllowedHeaders(List.of("*"));
 
-        // Allows the Authorization header.
+        // Allows credentials.
         config.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source =
@@ -54,33 +57,25 @@ public class SecurityConfig {
             StudentRepository studentRepository) throws Exception {
 
         http
-                // Enables CORS.
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
-
-                // Disables CSRF.
                 .csrf(csrf -> csrf.disable())
-
-                // Disables default login.
                 .formLogin(form -> form.disable())
-
-                // Disables basic login.
                 .httpBasic(basic -> basic.disable())
 
-                // Allows registration and login.
+                // Allows registration, login and OPTIONS requests.
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/auth/register",
                                 "/api/auth/login"
                         ).permitAll()
-
-                        // Allows CORS preflight requests.
-                        .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
-
-                        // Protects other APIs.
+                        .requestMatchers(
+                                org.springframework.http.HttpMethod.OPTIONS,
+                                "/**"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
 
-                // Adds our JWT filter.
+                // Adds JWT filter.
                 .addFilterBefore(
                         new JwtAuthenticationFilter(
                                 jwtService,
