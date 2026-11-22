@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_URL from "./api";
 
 function Register() {
 
@@ -25,16 +26,18 @@ function Register() {
     try {
       // Send details to backend
       const response = await axios.post(
-        "http://localhost:8080/api/auth/register",
+        `${API_URL}/api/auth/register`,
         { name, email, password }
       );
 
       // Save login token
       localStorage.setItem("token", response.data.token);
+
       // Clear all input fields
       setName("");
       setEmail("");
       setPassword("");
+
       // Open profile page
       navigate("/profile");
 

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_URL from "./api";
 
 function Profile() {
 
@@ -29,7 +30,7 @@ function Profile() {
     try {
       // Get profile from backend
       const response = await axios.get(
-        "http://localhost:8080/api/profile",
+        `${API_URL}/api/profile`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -79,7 +80,7 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        "http://localhost:8080/api/profile",
+        `${API_URL}/api/profile`,
         {
           name: editName.trim(),
           email: editEmail.trim()
@@ -94,25 +95,25 @@ function Profile() {
       // Update displayed details
       setName(editName.trim());
       setEmail(editEmail.trim());
+
       // Clear the input fields
       setEditName("");
       setEditEmail("");
+
       alert("Profile updated successfully");
 
     } catch (error) {
       console.log("Update Error:", error.response || error.message);
       alert("Update failed");
     }
-
   };
-
-
 
   // Logout student
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
   };
+
   // Delete student account
   const handleDelete = async () => {
 
@@ -129,7 +130,7 @@ function Profile() {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        "http://localhost:8080/api/profile",
+        `${API_URL}/api/profile`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -149,6 +150,7 @@ function Profile() {
       alert("Account deletion failed");
     }
   };
+
   return (
     <div className="profile-card">
       <h2>My Profile</h2>

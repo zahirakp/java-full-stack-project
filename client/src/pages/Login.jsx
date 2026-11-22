@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_URL from "./api";
 
 function Login() {
 
@@ -24,15 +25,17 @@ function Login() {
     try {
       // Send login details to backend
       const res = await axios.post(
-        "http://localhost:8080/api/auth/login",
+        `${API_URL}/api/auth/login`,
         { email, password }
       );
 
       // Save JWT token
       localStorage.setItem("token", res.data.token);
+
       // Clear all input fields
       setEmail("");
       setPassword("");
+
       // Open profile page
       navigate("/profile");
 
