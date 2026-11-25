@@ -32,13 +32,17 @@ public class LoginRequest {
     }
 }
 
-//Login cheyyumbol name venda.
-//Email and password mathram mathi.
+// During login, we don't need the student's name.
+// We only need the email and password.
+
 //public class LoginRequest {
 
 //    private String email;
-//    private String password;}
+//    private String password;
+//}
 
-//Example:
-// { "email": "zay@gmail.com",
-//  "password": "123" }
+// Example:
+// {
+//     "email": "zay@gmail.com",
+//     "password": "123"
+// }

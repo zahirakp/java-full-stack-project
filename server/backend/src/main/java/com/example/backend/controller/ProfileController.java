@@ -73,27 +73,28 @@ public class ProfileController {
     }
 }
 
-//Register
-//Zahira name, email, password enter cheyyunnu.
-//POST /api/auth/register
-//Backend password hash cheythu MySQL-il save cheyyunnu.
-//
-//Login
-//Zahira email and password enter cheyyunnu.
-//POST /api/auth/login
-//Backend password match cheythu JWT token return cheyyunnu.
-//
-//View Profile
-//Frontend JWT token send cheyyunnu.
-//GET /api/profile
-//Filter token check cheyyunnu. ProfileController details return cheyyunnu.
-//
-//Update Profile
-//Zahira name change cheyyunnu.
+// Register
+// Zahira enters her name, email, and password.
+// POST /api/auth/register
+// The backend hashes the password and saves it in MySQL.
+
+// Login
+// Zahira enters her email and password.
+// POST /api/auth/login
+// The backend checks the password and returns a JWT token.
+
+// View Profile
+// The frontend sends the JWT token.
+// GET /api/profile
+// The filter checks the token.
+// ProfileController returns the profile details.
+
+// Update Profile
+// Zahira changes her name.
 // PUT /api/profile
-//Backend database update cheyyunnu.
-//
-//Delete Profile
-//Zahira account delete cheyyunnu.
-//DELETE /api/profile
-//Database-il ninn student delete cheyyunnu.
+// The backend updates the database.
+
+// Delete Profile
+// Zahira deletes her account.
+// DELETE /api/profile
+// The student is deleted from the database.

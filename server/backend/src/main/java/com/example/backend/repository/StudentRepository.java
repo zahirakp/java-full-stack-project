@@ -15,8 +15,11 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     Optional<Student> findByEmail(String email);
 }
 //studentRepository.existsByEmail("zay@gmail.com");
-//Database-il ee email already undo ennu check cheyyum.
+// Checks whether this email already exists in the database.
+
 //studentRepository.findByEmail("zay@gmail.com");
-//Ee email ulla student-ne find cheyyum.
-//Important: existsByEmail() and findByEmail() nammal create cheytha methods aanu.
-// Spring Data JPA method name nokki query generate cheyyum.
+// Finds the student with this email.
+
+//Important:
+// existsByEmail() and findByEmail() are custom methods created by us.
+// Spring Data JPA automatically generates the database query by reading the method name.

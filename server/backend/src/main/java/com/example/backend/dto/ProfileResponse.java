@@ -33,11 +33,15 @@ public class ProfileResponse {
     }
 }
 
-//Nammal recently create cheytha file aanu.
-//Profile response-il password vararuthu ennathinaal aanu ith create cheythath.
+// This is a file we created recently.
+// We created this because the password should not appear in the profile response.
+
 //public class ProfileResponse {
 //    private Long id;
 //    private String name;
-//    private String email;  }
-//Database-il password undenkilum, ee DTO-il password field illa.
-//Athukondu API response-il password varilla.
+//    private String email;
+//}
+
+// Even though the password exists in the database,
+// this DTO does not have a password field.
+// So, the password will not appear in the API response.

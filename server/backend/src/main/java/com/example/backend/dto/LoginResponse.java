@@ -20,11 +20,17 @@ public class LoginResponse {
     }
 }
 
-//Login successful aayal backend JWT token return cheyyum.
-//LoginResponse-il token store cheyyunnu.
-//public class LoginResponse {
-//    private String token;}
+// When login is successful, the backend returns a JWT token.
+// LoginResponse stores the token.
 
-//Example response:
-// { "token": "your-jwt-token" }
-//Ithu frontend-il save cheyyan kazhiyum. Pinne protected API call cheyyumbol token send cheyyum.
+//public class LoginResponse {
+//    private String token;
+//}
+
+// Example response:
+// {
+//     "token": "your-jwt-token"
+// }
+
+// The frontend can save this token.
+// Later, the frontend sends this token when calling protected APIs.

@@ -39,13 +39,19 @@ public class RegisterRequest {
 }
 
 
-//Ithu registration data receive cheyyum.
+// This receives the registration data.
+
 //public class RegisterRequest {
 //    private String name;
 //    private String email;
-//    private String password;}
-//Example JSON:
-//  { "name": "Zahira",
-//  "email": "zay@gmail.com",
-//  "password": "123" }
-//Ee data RegisterRequest object-il varum.
+//    private String password;
+//}
+
+// Example JSON:
+// {
+//     "name": "Zahira",
+//     "email": "zay@gmail.com",
+//     "password": "123"
+// }
+
+// This data is received in the RegisterRequest object.

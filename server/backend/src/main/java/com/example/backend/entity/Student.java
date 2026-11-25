@@ -55,13 +55,16 @@ public class Student {
     }
 }
 //@Entity
-//Ithu Java class aanu database table represent cheyyunnath ennu Spring/JPA-ne ariyikkunnu.
+// Tells Spring/JPA that this Java class represents a database table.
+
 //@Id
-//Ithu table-il primary key aanu.
-//Primary key ennu paranjaal oro student-inum unique aaya ID.
+// This is the primary key of the table.
+// A primary key is a unique ID for each student.
 
 //@GeneratedValue
-//ID automatic aayi generate cheyyum.
+// Automatically generates the ID.
 
 //private String password
-//Student password store cheyyan. Nammal database-il plain password alla, BCrypt hash aanu save cheyyunnath.
+// Stores the student's password.
+// We do not save the plain password in the database.
+// We save the BCrypt hashed password instead.
