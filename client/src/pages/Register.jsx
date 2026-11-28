@@ -50,28 +50,14 @@ function Register() {
     <div>
       <h2>Student Register</h2>
 
-      {/* Registration form */}
+    
       <form onSubmit={handleRegister}>
 
-        <input
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <input placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
 
         <button type="submit">Register</button>
       </form>

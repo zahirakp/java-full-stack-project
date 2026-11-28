@@ -155,24 +155,13 @@ function Profile() {
     <div className="profile-card">
       <h2>My Profile</h2>
 
-      {/* Display profile details */}
       <p>Student ID: {id}</p>
       <p>Name: {name}</p>
       <p>Email: {email}</p>
 
-      {/* Edit student details */}
-      <input
-        placeholder="Name"
-        value={editName}
-        onChange={(e) => setEditName(e.target.value)}
-      />
+      <input placeholder="Name" value={editName} onChange={(e) => setEditName(e.target.value)}/>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={editEmail}
-        onChange={(e) => setEditEmail(e.target.value)}
-      />
+      <input type="email" placeholder="Email" value={editEmail} onChange={(e) => setEditEmail(e.target.value)}/>
 
       <button onClick={handleUpdate}>Update</button> <br /> <br />
       <button onClick={handleLogout}>Logout</button> <br /> <br />
